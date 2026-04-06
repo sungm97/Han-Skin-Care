@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Han's Skin Care · 한스 스킨케어</title>
 
-  <!-- Fonts: Cormorant Garamond (elegant display) + Jost (clean body) + Noto Serif KR (Korean) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
   <style>
     /* =============================================================
        HAN'S SKIN CARE
-       White · Blush pink · Soft, graphic-forward, bilingual EN/KR
+       White · Blush pink · Soft, graphic-forward
        ============================================================= */
 
     :root {
@@ -30,12 +28,8 @@
       --text-light:  #7A6A66;
       --border:      #F0E0DA;
 
-      --font-display: 'Cormorant Garamond', 'Georgia', serif;
+      --font-display: 'DM Sans', sans-serif;
       --font-body:    'Jost', 'Helvetica Neue', sans-serif;
-      --font-kr:      'Gowun Batang', serif;
-      /*--font-kr:      'Nanum Myeongjo', serif;*/
-      /*--font-kr:      'Noto Serif KR', serif;*/
-      
 
       --max-width: 1200px;
       --section-pad: 120px 24px;
@@ -61,21 +55,16 @@
 
     .label {
       font-family: var(--font-body); font-weight: 500;
-      font-size: 13px; letter-spacing: 3px;
+      font-size: 18px; letter-spacing: 3px;
       text-transform: uppercase; color: var(--rose);
       margin-bottom: 16px;
     }
     .heading {
       font-family: var(--font-display); font-weight: 500;
       font-size: clamp(36px, 5.5vw, 60px); line-height: 1.15;
-      color: var(--text); margin-bottom: 8px;
+      color: var(--text); margin-bottom: 24px;
     }
     .heading em { font-style: italic; color: var(--rose); }
-    .heading-kr {
-      font-family: var(--font-kr); font-weight: 300;
-      font-size: clamp(16px, 2.2vw, 22px);
-      color: var(--text-muted); margin-bottom: 24px;
-    }
     .subtext {
       font-size: 20px; color: var(--text-muted);
       max-width: 540px; line-height: 1.85;
@@ -116,10 +105,6 @@
       font-family: var(--font-display); font-weight: 600;
       font-size: 24px; color: var(--text);
     }
-    .nav-logo-kr {
-      font-family: var(--font-kr); font-weight: 300;
-      font-size: 14px; color: var(--text-light);
-    }
 
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a {
@@ -149,10 +134,12 @@
        HERO
     ============================================================ */
     .hero {
-      padding: 180px 24px 100px;
+      padding: 180px 24px 80px;
       text-align: center;
       position: relative; overflow: hidden;
       background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+      display: block;
+      min-height: calc(100vh - 76px);
     }
 
     .hero-bg-photo {
@@ -182,24 +169,19 @@
 
     .hero-label {
       font-family: var(--font-body); font-weight: 500;
-      font-size: 14px; letter-spacing: 4px;
+      font-size: 18px; letter-spacing: 4px;
       text-transform: uppercase; color: var(--rose);
       margin-bottom: 28px; position: relative;
     }
     .hero h1 {
       font-family: var(--font-display); font-weight: 500;
       font-size: clamp(46px, 8vw, 90px); line-height: 1.05;
-      margin-bottom: 12px; position: relative;
-    }
-    .hero h1 em { font-style: italic; color: var(--rose); }
-    .hero-kr {
-      font-family: var(--font-kr); font-weight: 300;
-      font-size: clamp(18px, 3vw, 26px);
-      color: var(--text-muted);
       margin-bottom: 32px; position: relative;
     }
+    .hero h1 em { font-style: italic; color: var(--rose); }
+    
     .hero-sub {
-      font-size: 19px; color: var(--text-muted);
+      font-size: 23px; color: var(--text-muted);
       max-width: 500px; margin: 0 auto 48px;
       line-height: 1.85; position: relative;
     }
@@ -216,12 +198,24 @@
     .btn:hover { background: var(--rose-dark); transform: translateY(-2px); }
 
     .hero-contact {
-      display: flex; flex-direction: column; align-items: center;
-      gap: 12px; margin-bottom: 36px; position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: nowrap;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      width: max-content;
+      max-width: calc(100% - 48px);
+      margin: 0 auto;
+      z-index: 1;
     }
     .hero-contact-item {
       display: flex; align-items: center; gap: 10px;
-      font-size: 15px; color: var(--text-muted);
+      font-size: 18px; color: var(--text-muted);
+      white-space: nowrap;
     }
     .hero-contact-item svg { color: var(--rose); flex-shrink: 0; }
     .hero-contact-item a { color: var(--rose); border-bottom: 1px solid transparent; transition: border-color .3s; }
@@ -231,6 +225,8 @@
     .hero-actions {
       display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
       position: relative;
+      margin-bottom: 0px;
+      margin-top: 200px;
     }
     .btn-kakao {
       display: inline-flex; align-items: center; gap: 8px;
@@ -251,7 +247,7 @@
     /* ============================================================
        SERVICES
     ============================================================ */
-    .services { padding: var(--section-pad); }
+    .services { padding: 30px 24px; }
     .services-head { text-align: center; margin-bottom: 72px; }
     .services-head .subtext { margin: 0 auto; }
 
@@ -277,14 +273,13 @@
 
     /* Service card photo area */
     .svc-photo {
-      width: 100%; aspect-ratio: 4/3;
+      width: 100%; 
       background: var(--blush);
       position: relative; overflow: hidden;
       display: flex; align-items: center; justify-content: center;
     }
     .svc-photo img {
-      width: 100%; height: 100%;
-      object-fit: cover;
+      width: 100%; height: auto;
       display: block;
     }
     .svc-photo-placeholder {
@@ -302,13 +297,9 @@
 
     .svc h3 {
       font-family: var(--font-display); font-weight: 500;
-      font-size: 24px; margin-bottom: 4px;
+      font-size: 24px; margin-bottom: 16px;
     }
-    .svc .svc-kr {
-      font-family: var(--font-kr); font-weight: 500;
-      font-size: 16px;
-      margin-bottom: 16px;
-    }
+    
     .svc p:last-child {
       font-size: 15px; color: var(--text-muted); line-height: 1.8;
     }
@@ -403,11 +394,7 @@
       font-family: var(--font-display); font-style: italic;
       font-size: 24px; color: var(--rose); margin-top: 32px;
     }
-    .about-sig-kr {
-      font-family: var(--font-kr); font-weight: 300;
-      font-size: 16px; color: var(--text-light);
-    }
-
+    
     /* ============================================================
        EXPERIENCE BANNER (full-width graphic section)
     ============================================================ */
@@ -436,7 +423,7 @@
       font-size: clamp(32px, 5vw, 52px); line-height: 1.2;
       margin-bottom: 8px; position: relative;
     }
-    .experience .heading-kr { position: relative; }
+    
     .experience p {
       font-size: 18px; color: var(--text-muted);
       max-width: 520px; margin: 0 auto;
@@ -459,11 +446,7 @@
       letter-spacing: 1px; text-transform: uppercase;
       color: var(--text-muted); margin-top: 8px;
     }
-    .stat-label-kr {
-      font-family: var(--font-kr); font-weight: 300;
-      font-size: 12px; color: var(--text-light);
-    }
-
+    
     /* ============================================================
        TESTIMONIALS
     ============================================================ */
@@ -557,13 +540,9 @@
 
     .contact-card h3 {
       font-family: var(--font-display); font-weight: 500;
-      font-size: 22px; margin-bottom: 4px;
+      font-size: 22px; margin-bottom: 20px;
     }
-    .contact-card .cb-kr {
-      font-family: var(--font-kr); font-weight: 500;
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
+    
     .contact-card p,
     .contact-card address {
       font-style: normal; font-size: 15px;
@@ -598,11 +577,7 @@
       font-family: var(--font-display); font-weight: 600;
       font-size: 22px; color: var(--white);
     }
-    .footer-logo-kr {
-      font-family: var(--font-kr); font-weight: 300;
-      font-size: 14px; color: var(--blush-mid);
-    }
-
+    
     .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 24px; }
     .footer-links a {
       font-size: 12px; font-weight: 500;
@@ -658,22 +633,31 @@
     .modal-title {
       font-family: var(--font-display); font-weight: 500;
       font-size: 32px; line-height: 1.2;
-      color: var(--text); margin-bottom: 4px;
+      color: var(--text); margin-bottom: 24px;
     }
-    .modal-title-kr {
-      font-family: var(--font-kr); font-weight: 500;
-      font-size: 18px; color: var(--text-light);
-      margin-bottom: 24px;
-    }
-
+    
     .modal-desc {
       font-size: 16px; color: var(--text-muted);
       line-height: 1.9; margin-bottom: 16px;
     }
-    .modal-desc-kr {
-      font-family: var(--font-kr); font-weight: 400;
-      font-size: 15px; color: var(--text-light);
-      line-height: 1.9;
+    
+    /* Menu list inside modal (used when a service has sub-items) */
+    .modal-menu { list-style: none; margin-top: 4px; }
+    .modal-menu li {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .modal-menu li:last-child { border-bottom: none; }
+    .modal-menu-name {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: 20px; color: var(--text); margin-bottom: 6px;
+    }
+    
+    .modal-menu-time {
+      font-size: 16px; color: var(--text); margin-bottom: 2px;
+    }
+    .modal-menu-desc {
+      font-size: 14px; color: var(--text-muted); line-height: 1.75;
     }
 
     .modal-close {
@@ -717,7 +701,7 @@
       :root { --section-pad: 80px 20px; }
       .nav-links, .nav-cta { display: none; }
       .nav-toggle { display: block; }
-      .hero { padding: 150px 20px 80px; }
+      .hero { padding: 150px 20px 32px; }
       .hero-bloom { width: 400px; height: 400px; }
       .services-grid, .reviews-grid { grid-template-columns: 1fr; }
       .stats { gap: 24px; }
@@ -733,30 +717,26 @@
 
 <body>
 
-  <!-- ====== NAVIGATION ====== -->
   <nav class="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
         <span class="nav-logo-en">Han's Skin Care</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#services">Services • 서비스</a></li>
-        <li><a href="#about">About • 소개</a></li>
-        <li><a href="#reviews">Reviews • 리뷰</a></li>
-        <li><a href="#contact">Contact • 연락처</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Book Now • 예약하기</a>
+      <a href="#contact" class="nav-cta">Book Now</a>
       <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
 
-  <!-- ====== HERO ====== -->
   <section class="hero">
-    <!-- ↓ Replace your-photo.jpg with your image filename or URL -->
     <div class="hero-bg-photo" style="background-image: url('images/main-banner.jpg')"></div>
 
-    <!-- Decorative bloom SVG -->
     <svg class="hero-bloom" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <radialGradient id="bloom-grad" cx="50%" cy="50%" r="50%">
@@ -773,34 +753,37 @@
       <ellipse cx="350" cy="200" rx="90" ry="180" fill="#F2CFC5" opacity=".05" transform="rotate(300,350,350)"/>
     </svg>
 
-    <p class="hero-label reveal">Beauty &amp; Wellness Studio</p>
-    <h1 class="reveal"><em>Han's</em>Skin Care</h1>
+    <p class="hero-label reveal">K-Beauty & Wellness Studio</p>
+    <h1 class="reveal"><em>Han's</em>  Skin Care</h1>
     <p class="hero-sub reveal">
       Facials · Semi-Permanent Makeup · Eyelash Perms
     </p>
 
+    <div class="hero-actions reveal">
+      <a href="#contact" class="btn">Book Your Visit</a>
+      <a href="#" class="btn btn-kakao">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" stroke="none"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.21 4.65 6.6-.15.53-.96 3.4-.99 3.63 0 0-.02.17.09.24.11.06.24.01.24.01.31-.04 3.66-2.4 4.24-2.81.57.08 1.16.13 1.77.13 5.52 0 10-3.58 10-7.9S17.52 3 12 3z"/></svg>
+        KakaoTalk
+      </a>
+    </div>
+
     <div class="hero-contact reveal">
       <div class="hero-contact-item">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>50001 Newport Drive, Suite 2<br>Illinois, IL 60008</span>
+      <span>
+      <a href="https://maps.google.com/?q=5001+Newport+Drive,+Rolling+Meadows,+IL+60008" target="_blank" rel="noopener noreferrer">
+      5001 Newport Drive, Floor 2, Rolling Meadows, IL 60008
+      </a>
+      </span>      
       </div>
       <div class="hero-contact-item">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-        <a href="tel:+12125550190">(847) 962-7633</a>
+        <a href="tel:+18479627633">(847) 962-7633</a>
       </div>
-    </div>
-
-    <div class="hero-actions reveal">
-      <a href="#contact" class="btn">Book Your Visit · 예약하기</a>
-      <a href="#" class="btn btn-kakao">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" stroke="none"><path d="M12 3C6.48 3 2 6.58 2 10.9c0 2.78 1.86 5.21 4.65 6.6-.15.53-.96 3.4-.99 3.63 0 0-.02.17.09.24.11.06.24.01.24.01.31-.04 3.66-2.4 4.24-2.81.57.08 1.16.13 1.77.13 5.52 0 10-3.58 10-7.9S17.52 3 12 3z"/></svg>
-        KakaoTalk · 카카오톡
-      </a>
     </div>
   </section>
 
 
-  <!-- ====== PETAL DIVIDER ====== -->
   <div class="petal-divider">
     <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
       <ellipse cx="20" cy="20" rx="12" ry="18" fill="#E8A99A" transform="rotate(-30,20,20)"/>
@@ -812,53 +795,16 @@
   </div>
 
 
-  <!-- ====== SERVICES ====== -->
   <section class="services" id="services">
     <div class="container">
       <div class="services-head reveal">
-        <p class="label">Services · 서비스</p>
-        <h2 class="heading">What We <em>Offer</em></h2>
-        <p class="heading-kr">정성을 담은 케어</p>
-        <p class="subtext">Each treatment is thoughtfully designed to bring out your skin's natural radiance.</p>
+        <p class="label">Services</p>
+        <h2 class="heading">What We Offer</h2>
+        <p class="subtext">In a private space tailored exclusively for you, we deliver deep care and dignified beauty.</p>
       </div>
 
-      <div class="services-grid">
-        <div class="svc reveal" data-modal="facial">
-          <div class="svc-photo">
-            <img src="images/facial-2.jpg" alt="Facial treatment">
-          </div>
-          <div class="svc-body">
-            <h3>Facials</h3>
-            <p class="svc-kr">페이셜 케어</p>
-            <p>Custom facials using premium botanicals to deeply cleanse, hydrate, and revitalize your complexion for a healthy, radiant glow.</p>
-            <span class="svc-more">Learn More · 자세히</span>
-          </div>
+      <div class="services-grid" id="services-grid">
         </div>
-
-        <div class="svc reveal" data-modal="makeup">
-          <div class="svc-photo">
-           <img src="images/eyebrow-1.jpg" alt="Semi-permanent makeup">
-          </div>
-          <div class="svc-body">
-            <h3>Semi-Permanent Makeup</h3>
-            <p class="svc-kr">반영구 화장</p>
-            <p>Natural-looking semi-permanent eye liner, eyebrow, and lip treatments designed to enhance your features with lasting, effortless beauty.</p>
-            <span class="svc-more">Learn More · 자세히</span>
-          </div>
-        </div>
-
-        <div class="svc reveal" data-modal="lash">
-          <div class="svc-photo">
-            <img src="images/eyelash-1.jpg" alt="Eyelash perm">
-          </div>
-          <div class="svc-body">
-            <h3>Eyelash Perms</h3>
-            <p class="svc-kr">속눈썹 펌</p>
-            <p>Beautifully lifted and curled lashes that open up your eyes and give you a naturally wide-awake, polished look — no extensions needed.</p>
-            <span class="svc-more">Learn More · 자세히</span>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -872,7 +818,6 @@
   </div>
 
 
-  <!-- ====== ABOUT ====== -->
   <section class="about" id="about">
     <div class="about-bg-circle"></div>
     <div class="container">
@@ -881,13 +826,12 @@
           <img src="images/facial-1.jpg" alt="Han's Skin Care studio">
           <div class="about-img-placeholder">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-            <span>Your Photo · 사진</span>
+            <span>Your Photo</span>
           </div>
         </div>
         <div class="about-text reveal">
-          <p class="label">About · 소개</p>
+          <p class="label">About</p>
           <h2 class="heading">Rooted in Care,<br>Guided by <em>Nature</em></h2>
-          <p class="heading-kr">자연에서 찾은 정성스러운 케어</p>
           <p>Han's Skin Care was founded with a simple belief: that beautiful skin comes from thoughtful, consistent care — not quick fixes. We combine trusted Korean skincare traditions with modern techniques to give every client a personalized experience.</p>
           <p>Our studio is a calm, welcoming space where you can truly relax while our licensed estheticians take care of the rest.</p>
           <div class="badges">
@@ -905,32 +849,30 @@
 
 
 
-  <!-- ====== TESTIMONIALS ====== -->
   <section class="reviews" id="reviews">
     <div class="container">
       <div class="reviews-head reveal">
-        <p class="label">Testimonials · 고객 후기</p>
+        <p class="label">Testimonials</p>
         <h2 class="heading">What Our<br>Clients <em>Say</em></h2>
-        <p class="heading-kr">소중한 말씀</p>
       </div>
       <div class="reviews-grid">
         <div class="review reveal">
           <p class="review-stars">★ ★ ★ ★ ★</p>
           <p class="review-quote-mark">"</p>
-          <blockquote>My skin has never looked this good. Han's team really listens to what your skin needs and tailors every step. I look forward to my appointments every month.</blockquote>
-          <p class="review-who">— Olivia M.</p>
+          <blockquote>my family have been getting pampered here with owner jane for almost a decade! you can trust her expertise and know she has her client's health and beauty as an utmost priority. you leave feeling fabulous!</blockquote>
+          <p class="review-who">— Sonja A.</p>
         </div>
         <div class="review reveal">
           <p class="review-stars">★ ★ ★ ★ ★</p>
           <p class="review-quote-mark">"</p>
-          <blockquote>The brightening facial completely transformed my complexion. I get compliments all the time now. So grateful I found this studio!</blockquote>
-          <p class="review-who">— 지영 P.</p>
+          <blockquote>Absolutely LOVED my experience here!! Jane is so sweet and has that ✨mother's touch✨ to ease you into much needed pampering. I had a lash lift perm done and am SO happy with the results & attention to detail! Will come again--highly recommend if you're in need of some special care!</blockquote>
+          <p class="review-who">— Katie L.</p>
         </div>
         <div class="review reveal">
           <p class="review-stars">★ ★ ★ ★ ★</p>
           <p class="review-quote-mark">"</p>
-          <blockquote>Calm, clean, and absolutely beautiful space. The team is incredibly skilled and makes you feel right at home. Best skincare experience in the area.</blockquote>
-          <p class="review-who">— Danielle R.</p>
+          <blockquote>Great experiences at Han’s Skin Care! She takes great care of my family and I. Our skin is noticeably healthier and vibrant.</blockquote>
+          <p class="review-who">— Eunice</p>
         </div>
       </div>
     </div>
@@ -946,39 +888,38 @@
   </div>
 
 
-  <!-- ====== CONTACT ====== -->
   <section class="contact" id="contact">
     <div class="contact-bg-shape"></div>
     <div class="container">
       <div class="contact-head reveal">
-        <p class="label">Contact · 연락처</p>
+        <p class="label">Contact</p>
         <h2 class="heading">Come <em>Visit</em> Us</h2>
-        <p class="heading-kr">방문 안내</p>
       </div>
       <div class="contact-grid">
         <div class="contact-card reveal">
-          <div class="contact-card-icon">
+          <a href="https://maps.google.com/?q=5001+Newport+Drive,+Rolling+Meadows,+IL+60008" target="_blank" rel="noopener noreferrer" class="contact-card-icon" style="border: none;">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
               <circle cx="12" cy="10" r="3"/>
             </svg>
-          </div>
+          </a>
           <h3>Visit Us</h3>
-          <p class="cb-kr">오시는 길</p>
-          <address>5001 Newport Drive<br>Suite 2<br>Rolling Meadows, IL 60008</address>
-        </div>
+          <address>
+            <a href="https://maps.google.com/?q=5001+Newport+Drive,+Rolling+Meadows,+IL+60008" target="_blank" rel="noopener noreferrer">
+              5001 Newport Drive<br>Floor 2<br>Rolling Meadows, IL 60008
+            </a>
+          </address>
+          </div>
         <div class="contact-card reveal">
-          <div class="contact-card-icon">
+          <a href="tel:+18479627633" class="contact-card-icon" style="border: none;">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-            </svg>
-          </div>
+              </svg>
+          </a>
           <h3>Get in Touch</h3>
-          <p class="cb-kr">연락하기</p>
           <p>
-            <a href="tel:+12125550190">(847) 962-7633</a><br>
-            <a href="/cdn-cgi/l/email-protection#b1d9d4dddddef1d9d0dfc2c2dad8dfd2d0c3d49fd2dedc"><span class="__cf_email__" data-cfemail="9ef6fbf2f2f1def6fff0ededf5f7f0fdffecfbb0fdf1f3">[email&#160;protected]</span></a><br>
-            <a href="#">KakaoTalk · 카카오톡</a>
+            <a href="tel:+18479627633">(847) 962-7633</a><br>
+            <a href="#">KakaoTalk</a>
           </p>
         </div>
       </div>
@@ -986,7 +927,6 @@
   </section>
 
 
-  <!-- ====== SERVICE MODALS ====== -->
   <div class="modal-overlay" id="modal-overlay">
     <div class="modal">
       <button class="modal-close" id="modal-close" aria-label="Close">
@@ -997,15 +937,12 @@
       <div class="modal-photo" id="modal-photo"></div>
       <div class="modal-body">
         <h3 class="modal-title" id="modal-title"></h3>
-        <p class="modal-title-kr" id="modal-title-kr"></p>
         <p class="modal-desc" id="modal-desc"></p>
-        <p class="modal-desc-kr" id="modal-desc-kr"></p>
       </div>
     </div>
   </div>
 
 
-  <!-- ====== FOOTER ====== -->
   <footer class="footer">
     <div class="footer-logo">
       <span class="footer-logo-en">Han's Skin Care</span>
@@ -1014,11 +951,10 @@
       <a href="#">Instagram</a>
       <a href="#">KakaoTalk</a>
     </div>
-    <p class="footer-copy">&copy; 2026 Han's Skin Care. All rights reserved.</p>
+    <p class="footer-copy">© 2026 Han's Skin Care. All rights reserved.</p>
   </footer>
 
 
-  <!-- ====== Scroll reveal + Modal ====== -->
   <script>
     /* Scroll reveal */
     const obs = new IntersectionObserver((entries) => {
@@ -1026,47 +962,165 @@
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    /* ── Service modal data ── */
-    const serviceData = {
-      facial: {
-        title: 'Facials',
-        titleKr: '페이셜 케어',
-        img: 'images/facial-2.jpg',
-        desc: 'Our customized facials begin with a thorough skin analysis, followed by deep cleansing, gentle exfoliation, and targeted treatments using premium botanical products. Each session is tailored to your skin type and concerns — whether you need hydration, brightening, anti-aging, or pore care. You\'ll leave with a refreshed, glowing complexion.',
-        descKr: '맞춤형 페이셜은 철저한 피부 분석으로 시작하여 딥 클렌징, 부드러운 각질 제거, 프리미엄 보태니컬 제품을 사용한 집중 트리트먼트로 이어집니다. 수분 공급, 브라이트닝, 안티에이징, 모공 케어 등 피부 타입과 고민에 맞춰 진행됩니다. 빛나는 피부로 돌아가세요.'
+    /* ══════════════════════════════════════════════════════════════
+       SERVICES — edit this array to add, remove, or update services.
+       Each entry controls the card in the grid AND the pop-up modal.
+
+       Fields:
+         key     – unique ID (used internally; no spaces)
+         title   – English title shown on the card and modal
+         img     – image path for both the card thumbnail and modal
+         imgAlt  – alt text for the image
+         summary – short description shown on the card
+         desc    – longer description shown in the modal
+    ══════════════════════════════════════════════════════════════ */
+    const SERVICES = [
+      {
+        key:     'facial',
+        title:   'Facials',
+        img:     'images/facial-2.png',
+        imgAlt:  'Facial treatment',
+        summary: 'Custom facials using premium botanicals to deeply cleanse, hydrate, and revitalize your complexion for a healthy, radiant glow.',
+        // Use `menu` to list individual treatments in the pop-up.
+        // Each item: { name, time, desc }
+        menu: [
+          {
+            name:   'Essential Facial',
+            time:   '80 mins',
+            desc:   'A foundational treatment including cleansing, exfoliation, and basic hydration — perfect for first-time visitors or maintenance care.',
+          },
+          {
+            name:   'Personalized Facial',
+            time:   '90 mins', 
+            desc:   'A fully customized session tailored to your skin type and concerns. Includes a thorough skin analysis before treatment begins.',
+          },
+          {
+            name:   'Advanced Facial',
+            time:   '110 mins',
+            desc:   'Advanced facial for those who want to target specific skin concerns with a combination of techniques and potent serums for enhanced results.',
+          },
+          {
+            name:   'Premium Care',
+            time:   '120 mins',
+            desc:   'A premium deep-treatment facial targeting anti-aging, brightening, or pore care using professional-grade serums and techniques.',
+          },
+          {
+            name:   'HIFU V Life Face Treatment',
+            time:   '110 mins',
+            desc:   'Specialized lifting and contouring treatment using High-Intensity Focused Ultrasound (HIFU) technology to stimulate collagen production and tighten the skin for a more youthful, defined appearance.',
+          },
+          {
+            name:   'Local Dynamic Micro Massage Lifting',
+            time:   '90 mins',
+            desc:   'Ultra sound that stimulates collagen production and improves skin elasticity for a lifted, youthful appearance. Ideal for sagging or mature skin.',
+          },
+          {
+            name:   'MTS',
+            time:   '60 mins',
+            desc:   'A special ampoule is applied to the skin, and then a device with fine needles creates micro-channels to enhance absorption and stimulate collagen production for improved skin texture and elasticity.',
+          },
+          {
+            name:   'Acne Treatment Facial',
+            time:   '??? mins',
+            desc:   'A targeted facial designed to combat acne and blemishes using deep cleansing, exfoliation, and calming ingredients to reduce inflammation and promote clearer skin.',
+          },
+        ],
       },
-      makeup: {
-        title: 'Semi-Permanent Makeup',
-        titleKr: '반영구 화장',
-        img: 'images/eyebrow-1.jpg',
-        desc: 'Enhance your natural beauty with our semi-permanent makeup services. We offer expertly applied eye liner, eyebrow shaping and filling, and lip color treatments. Using the latest techniques and premium pigments, we create soft, natural-looking results that save you time every morning. Touch-ups are recommended every 1–2 years to maintain your look.',
-        descKr: '반영구 화장으로 자연스러운 아름다움을 더하세요. 아이라인, 눈썹 디자인 및 채움, 입술 색상 시술을 전문적으로 제공합니다. 최신 기법과 프리미엄 색소를 사용하여 부드럽고 자연스러운 결과를 만들어 드립니다. 1~2년마다 리터치를 권장합니다.'
+      {
+        key:     'makeup',
+        title:   'Semi-Permanent Makeup',
+        img:     'images/eyebrow-1.png',
+        imgAlt:  'Semi-permanent makeup',
+        summary: 'Natural-looking semi-permanent eye liner, eyebrow, and lip treatments designed to enhance your features with lasting, effortless beauty.',
+        menu: [
+          {
+            name:   'Eyebrow',
+            desc:   'Expertly shaped to complement your facial structure. This treatment fills in sparse areas and defines your natural arches for a polished, smudge-proof look.',
+          },
+          {
+            name:   'Eyeliner',
+            desc:   'Subtle pigment applied directly along the lash line. This creates the illusion of thicker lashes and naturally defines your eyes without the hassle of daily makeup.',
+          },
+          {
+            name:   'Lip',
+            desc:   'A custom-blended tint that restores natural color and softly defines the lip border. It corrects asymmetry and leaves your lips with a healthy, long-lasting flush.',
+          },
+        ],
       },
-      lash: {
-        title: 'Eyelash Perms',
-        titleKr: '속눈썹 펌',
-        img: 'images/eyelash-1.jpg',
-        desc: 'Our eyelash perm gives your natural lashes a beautiful, lasting curl that opens up your eyes without the need for daily curling or extensions. The gentle process takes about 45–60 minutes and results last 6–8 weeks. Perfect for those who want a naturally polished, wide-awake look every day.',
-        descKr: '속눈썹 펌은 매일 뷰러나 연장 없이도 눈매를 환하게 열어주는 아름다운 컬을 만들어 드립니다. 부드러운 시술 과정은 약 45~60분 소요되며, 효과는 6~8주간 지속됩니다. 매일 자연스럽고 또렷한 눈매를 원하시는 분께 완벽합니다.'
-      }
-    };
+      {
+        key:     'lash',
+        title:   'Eyelash Services',
+        img:     'images/eyelash-1.jpg',
+        imgAlt:  'Eyelash perm',
+        summary: 'Beautifully lifted and curled lashes that open up your eyes and give you a naturally wide-awake, polished look — no extensions needed. Or tint for added depth and drama.',
+        menu: [
+          {
+            name:   'Classic Lash lift',
+            time:   '$80 ($100 for 2 people)',
+            desc:   'A semi-permanent treatment that beautifully curls and lifts your natural lashes from base to tip. It instantly opens up your eyes for a brighter, more awakened look without the daily need for a lash curler.',
+          },
+          {
+            name:   'Eyelash Tint',
+            time:   '$25',
+            desc:   'A gentle, custom dye applied to your natural lashes to visibly darken and enhance them. It creates the effortless appearance of wearing mascara while remaining completely smudge-proof.',
+          },
+          {
+            name:   'Eyebrow Tint',
+            time:   '$25',
+            desc:   'A semi-permanent color applied to your brows to enhance their natural shape and thickness. It darkens even the finest hairs, creating a fuller, more defined look that perfectly frames your face.',
+          },
+          
+        ],
+      },
+      // ── To add a new service, copy one block above and change the fields. ──
+    ];
+
+    /* Build a key → entry lookup for the modal, and render the grid cards */
+    const serviceData = {};
+    const grid = document.getElementById('services-grid');
+    SERVICES.forEach(s => {
+      serviceData[s.key] = s;
+      const card = document.createElement('div');
+      card.className = 'svc reveal';
+      card.dataset.modal = s.key;
+      card.innerHTML =
+        '<div class="svc-photo"><img src="' + s.img + '" alt="' + s.imgAlt + '"></div>' +
+        '<div class="svc-body">' +
+          '<h3>' + s.title + '</h3>' +
+          '<p>' + s.summary + '</p>' +
+          '<span class="svc-more">Learn More</span>' +
+        '</div>';
+      grid.appendChild(card);
+      obs.observe(card);
+    });
 
     /* ── Modal logic ── */
     const overlay = document.getElementById('modal-overlay');
     const modalPhoto = document.getElementById('modal-photo');
     const modalTitle = document.getElementById('modal-title');
-    const modalTitleKr = document.getElementById('modal-title-kr');
     const modalDesc = document.getElementById('modal-desc');
-    const modalDescKr = document.getElementById('modal-desc-kr');
 
     function openModal(key) {
       const d = serviceData[key];
       if (!d) return;
       modalPhoto.innerHTML = '<img src="' + d.img + '" alt="' + d.title + '">';
       modalTitle.textContent = d.title;
-      modalTitleKr.textContent = d.titleKr;
-      modalDesc.textContent = d.desc;
-      modalDescKr.textContent = d.descKr;
+      if (d.menu) {
+        // Render a list of sub-treatments
+        modalDesc.innerHTML = '<ul class="modal-menu">' +
+          d.menu.map(item =>
+            '<li>' +
+              '<div style="display: flex; justify-content: space-between; align-items: center;">' +
+                '<p class="modal-menu-name">' + item.name + '</p>' +
+                (item.time ? '<span class="modal-menu-time">' + item.time + '</span>' : '') +
+              '</div>' +
+              (item.desc   ? '<p class="modal-menu-desc">'    + item.desc   + '</p>' : '') +
+            '</li>'
+          ).join('') +
+        '</ul>';
+      } else {
+        modalDesc.textContent = d.desc;
+      }
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
