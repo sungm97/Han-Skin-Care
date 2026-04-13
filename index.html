@@ -1129,17 +1129,17 @@
         menu: [
           {
             name:   'Classic Lash lift',
-            time:   '$85 ($120 for 2)',
+            price:  '$85 ($120 for 2)',
             desc:   'A semi-permanent treatment that beautifully curls and lifts your natural lashes from base to tip. It instantly opens up your eyes for a brighter, more awakened look without the daily need for a lash curler.',
           },
           {
             name:   'Eyelash Tint',
-            time:   '$25',
+            price:  '$25',
             desc:   'A gentle, custom dye applied to your natural lashes to visibly darken and enhance them. It creates the effortless appearance of wearing mascara while remaining completely smudge-proof.',
           },
           {
             name:   'Eyebrow Tint',
-            time:   '$25',
+            price:  '$35',
             desc:   'A semi-permanent color applied to your brows to enhance their natural shape and thickness. It darkens even the finest hairs, creating a fuller, more defined look that perfectly frames your face.',
           },
           
@@ -1236,6 +1236,12 @@
             time.className = 'modal-menu-time';
             time.textContent = item.time;
             row.appendChild(time);
+          }
+          if (item.price) {
+            const price = document.createElement('span');
+            price.className = 'modal-menu-time';
+            price.textContent = item.price;
+            row.appendChild(price);
           }
           li.appendChild(row);
 
